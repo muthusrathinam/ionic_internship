@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="registrationForm" (ngSubmit)="login()">
+
+  
+  <ion-item>
+    <ion-label>Email ID</ion-label></ion-item>
+    <ion-item tranparent>
+    <ion-input formControlName="email" aria-placeholder="mail-Id" type="email" ></ion-input>
+  </ion-item>
+
+  <div *ngFor="let error of errorMessages.email">
+    <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+      <small class="error-message"{{ error.message}}></small>
+    </ng-container>
+  </div>
+
+  <ion-item><ion-label>
+    Password
+  </ion-label></ion-item>
+  <ion-item transparent>
+    <ion-input formControlName="password" aria-placeholder="Password" type="password" ></ion-input>
+  </ion-item>
+
+  <div *ngFor="let error of errorMessages.password">
+    <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+      <small class="error-message"{{ error.message}}></small>
+    </ng-container>
+  </div>
+  <br><br>
+  
+
+  <ion-button [disabled]="!registrationForm.valid" (click)="login()" expand="block">Login
+    <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
+  </ion-button>
+  <br>
+
+  <ion-button expand="block" color="secondary" href="/register" routerDirection="forward">Register</ion-button>
+  </form>
+</ion-content>

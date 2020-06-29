@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <h1>Mobile Stores</h1>
+  <br>
+  <div class="center">
+  <ion-slides pager="true">
+
+    <ion-slide class="step-one">
+      <img margintop20 src="assets/1.jpg"/>
+      <br>
+    </ion-slide>
+    <ion-slide class="step-two">
+      <img margintop20 src="assets/2.jpg"/>
+      <br>
+    </ion-slide>
+    <ion-slide class="step-three">
+      <img margintop20 src="assets/3.jpg"/>
+      <br>
+    </ion-slide>
+
+  </ion-slides>
+
+  <br><br>
+
+  <ion-slides [options]="sliderConfig">
+      <ion-slide>
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+               redmi note 8 pro
+              </ion-card-title>
+              <ion-card-content>
+                <img src="assets/note-8-pro.jpg">
+                <ion-button expand="full">Add to Cart</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+    <ion-slide>
+      <div>
+        <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+               oppo a9
+              </ion-card-title>
+              <ion-card-content>
+                <img src="assets/oppo-a9.jpg">
+                <ion-button expand="full">Add to Cart</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>
+               realme 5i
+              </ion-card-title>
+              <ion-card-content>
+                <img src="assets/realme-5i.jpg">
+                <ion-button expand="full">Add to Cart</ion-button>
+              </ion-card-content>
+            </ion-card-header>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+ 
+
+</ion-content>
