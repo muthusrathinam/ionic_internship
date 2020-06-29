@@ -15,7 +15,7 @@
   </ion-item>
 
   <div *ngFor="let error of errorMessages.email">
-    <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+    <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">  
       <small class="error-message"{{ error.message}}></small>
     </ng-container>
   </div>
@@ -34,7 +34,7 @@
   </div>
   <br><br>
   
-
+  <!-- login button will  be enabled after validation only -->
   <ion-button [disabled]="!registrationForm.valid" (click)="login()" expand="block">Login
     <ion-icon slot="end" name="chevron-forward-circle-outline"></ion-icon>
   </ion-button>

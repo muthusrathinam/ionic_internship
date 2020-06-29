@@ -10,7 +10,7 @@ const TOKEN_KEY ='auth-token';
 })
 export class AuthenticationService {
 
-  authenticationState= new BehaviorSubject(false);
+  authenticationState= new BehaviorSubject(false);    //Initially authentication is set to false
 
   constructor(private storage: Storage, private plt: Platform) { 
     this.plt.ready().then(()=> {
@@ -31,13 +31,16 @@ export class AuthenticationService {
       this.authenticationState.next(true);
     });
   }
+
+  //after login authentication is set to true after checktoken()
+
   logout(){
     return this.storage.remove(TOKEN_KEY).then(() => {
       this.authenticationState.next(false);
     });
   }
   isAuthenticated(){
-    return this.authenticationState.value;
+    return this.authenticationState.value;         //returns whether user is authenticated or not 
   }
   
 }

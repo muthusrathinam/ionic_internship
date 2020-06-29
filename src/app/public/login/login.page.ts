@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   get password() {
     return this.registrationForm.get('password');
   }
+
   public errorMessages = {
     email:[
       {type: 'required', message:'email is required'},
@@ -25,6 +26,8 @@ export class LoginPage implements OnInit {
       {type: 'minLength', message:'Incorrect password'}
     ]
   }
+
+  //validation part
 
   registrationForm=this.formBuilder.group({
     email: ['', 

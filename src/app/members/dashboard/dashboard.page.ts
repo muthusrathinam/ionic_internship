@@ -12,6 +12,8 @@ export class DashboardPage{
   cart = [];
   items = [];
 
+  // slider properties
+
   sliderConfig = {
     slidesPerView: 1.6,
     spaceBetween: 10,
